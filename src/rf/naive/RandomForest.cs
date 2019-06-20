@@ -6,7 +6,7 @@ namespace rf.naive
 {
     public sealed class DecisionTree
     {
-        public struct DecisionTreeNode
+        public class DecisionTreeNode
         {
             public int FeatureIndex { get; set; }
             public double Value { get; set; }
@@ -60,7 +60,7 @@ namespace rf.naive
 
     public static class ModelBuilder
     {
-        private static readonly Regex treeSplit = new Regex(@"^booster\[\d+\]\n", RegexOptions.Compiled | RegexOptions.Multiline);
+        private static readonly Regex treeSplit = new Regex(@"^booster\[\d+\]\r?\n", RegexOptions.Compiled | RegexOptions.Multiline);
         public static RandomForest CreateXGBoost(string allTrees)
         {
             var treeStrings = treeSplit.Split(allTrees);
