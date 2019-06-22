@@ -46,7 +46,11 @@ namespace rf.naive
 
         public double EvaluateProbability(double[] instance)
         {
-            var sum = trees.Sum(t => t.Evaluate(instance));
+            var sum = 0d;
+            for(int i = 0; i < trees.Length; i++)
+            {
+                sum += trees[i].Evaluate(instance);
+            }
             var result = Logit(sum);
             return result;
         }
