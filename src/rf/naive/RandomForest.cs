@@ -6,7 +6,7 @@ namespace rf.naive
 {
     public sealed class DecisionTree
     {
-        public class DecisionTreeNode
+        public struct DecisionTreeNode
         {
             public int FeatureIndex { get; set; }
             public double Value { get; set; }
