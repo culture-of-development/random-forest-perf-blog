@@ -1,19 +1,19 @@
 namespace rf
 {
-    public class DecisionTreeNode_class
+    public sealed class DecisionTreeNode_class
     {
-        public int FeatureIndex;// { get; set; }
-        public double Value;// { get; set; }
-        public int TrueBranch;// { get; set; }
-        public int FalseBranch;// { get; set; }
+        public int FeatureIndex { get; set; }
+        public double Value { get; set; }
+        public int TrueBranch { get; set; }
+        public int FalseBranch { get; set; }
     }
 
     public struct DecisionTreeNode_struct
     {
-        public int FeatureIndex;// { get; set; }
-        public double Value;// { get; set; }
-        public int TrueBranch;// { get; set; }
-        public int FalseBranch;// { get; set; }
+        public int FeatureIndex { get; set; }
+        public double Value { get; set; }
+        public int TrueBranch { get; set; }
+        public int FalseBranch { get; set; }
     }
 
     public static class ArrayOfThings

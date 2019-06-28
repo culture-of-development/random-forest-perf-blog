@@ -4,28 +4,30 @@ using System.Text.RegularExpressions;
 
 namespace rf.naive
 {
-    public sealed class DecisionTree
+    public struct DecisionTree
     {
         public struct DecisionTreeNode
         {
-            public int FeatureIndex { get; set; }
-            public double Value { get; set; }
-            public int TrueBranch { get; set; }
-            public int FalseBranch { get; set; }
+            public float Value;
+            public short FeatureIndex;
+            public byte TrueBranch;
+            public byte FalseBranch;
         }
 
         const int LeafIndex = -1;
 
         private readonly DecisionTreeNode[] nodes;
+        private readonly DecisionTreeNode root;
 
         public DecisionTree(DecisionTreeNode[] tree)
         {
             nodes = tree;
+            root = nodes[0];
         }
 
         public double Evaluate(double[] features)
         {
-            var node = nodes[0];
+            var node = root;
             while(node.FeatureIndex != LeafIndex)
             {
                 int nodeIndex = features[node.FeatureIndex] < node.Value ? node.TrueBranch : node.FalseBranch;
