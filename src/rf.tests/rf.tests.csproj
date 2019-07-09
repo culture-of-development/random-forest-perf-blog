@@ -5,6 +5,7 @@
     <RootNamespace>rf.tests</RootNamespace>
 
     <IsPackable>false</IsPackable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
